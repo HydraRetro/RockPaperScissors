@@ -16,4 +16,12 @@ Day 2:
 - Added cute github svg icon to my github.
 - Over all it took a few hours to just do this. Okay, more than a few hours but im trying to keep a fire lit and the wood is wet.
 
+Day 3:
+- Started part 2 of the project trying to convert the code to work with UI
+- Still havent figured it out after a few hours. I can console.log the button id when click but cant figure out how to connect it to the playRound function..I feel like its a simple fix.
+- Moved on to adding more ui element in the HTML and DOM to display the current choices.
+- Added DOM for player scores but wont update.
+- Added a RESET button that refreshes the page.
+- Tried nesting everything in the event listener function and broke it all. Says play and computer selection is undefined.
+
 Created by HydraRetro
