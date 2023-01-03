@@ -16,12 +16,23 @@
         class="flex justify-center items-center my-9 mx-48 h-40 rounded-lg shadow-xl bg-gradient-to-r from-cyan-500 to-blue-500 min-w-max">
         <h1 class="text-3xl text-gray-50">ROCK, PAPER, SCISSORS</h1>
     </div>
+
     <!-- GAME CHOICES -->
     <div class="flex justify-evenly items-center m-16">
         <h2 class="text-2xl">Player Choice: <span id="player-choice"></span></h2>
         <h2 class="text-2xl">Computer Choice: <span id="computer-choice"></span></h2>
-        <h2 class="text-2xl">Result: <span id="result"></span></h2>
     </div>
+
+    <div class="flex justify-evenly items-center m-3">
+        <h2 class="text-xl">Player Score: <span id="player-score"></span></h2>
+        <h2 class="text-xl">Computer Score: <span id="computer-score"></span></h2>
+    </div>
+
+    <!-- Results -->
+    <div class="flex justify-center items-center">
+        <h2 class="text-xl">Result: <span id="result"></span></h2>
+    </div>
+
     <!-- BUTTONS -->
     <div class="my-12 p-0 flex justify-center items-center">
         <button id="rock"
@@ -30,6 +41,11 @@
             class="bg-blue-500 hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 duration-300 text-white font-bold py-2 px-4 rounded m-3 shadow-xl">PAPER</button>
         <button id="scissors"
             class="bg-blue-500 hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 duration-300 text-white font-bold py-2 px-4 rounded m-3 shadow-xl">SCISSORS</button>
+    </div>
+
+    <div class="my-12 p-0 flex justify-center items-center">
+        <button id="resetButton"
+            class="bg-gray-600 hover:bg-yellow-300 hover:-translate-y-1 hover:scale-110 duration-300 text-white font-bold py-2 px-4 rounded m-3 shadow-xl">RESET</button>
     </div>
     <!-- GITHUB SVG LINK -->
     <div class="flex justify-center items-center">
