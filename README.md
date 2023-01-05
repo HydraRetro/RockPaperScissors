@@ -18,10 +18,17 @@ Day 2:
 
 Day 3:
 - Started part 2 of the project trying to convert the code to work with UI
-- Still havent figured it out after a few hours. I can console.log the button id when click but cant figure out how to connect it to the playRound function..I feel like its a simple fix.
+- Still haven't figured it out after a few hours. I can console.log the button id when click but cant figure out how to connect it to the playRound function..I feel like its a simple fix.
 - Moved on to adding more ui element in the HTML and DOM to display the current choices.
 - Added DOM for player scores but wont update.
 - Added a RESET button that refreshes the page.
 - Tried nesting everything in the event listener function and broke it all. Says play and computer selection is undefined.
+
+Day 4: 
+- Asked for help on TOP Discord and it took all of 5 mins to find the problem. I feel dumb.
+- First, I passed the playRound function to the on click but not the arguments.
+- I was also console logging the playRound function which cause it to run right away. Deleted this.
+- To display the correct result, I passed the playRound with player and computer selections
+- Found issue where scores are adding 2 instead of 1.
 
 Created by HydraRetro
