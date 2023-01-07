@@ -31,4 +31,11 @@ Day 4:
 - To display the correct result, I passed the playRound with player and computer selections
 - Found issue where scores are adding 2 instead of 1.
 
+Day 5:
+- Lightning struck my powerline and knocked out my power for a day.
+- Finished basic logic for project.
+- Added a winner/loser popup when the max score is reached.
+- Cleaned up CSS a bit.
+- Added messy but working code to disable buttons once max score is reached.
+
 Created by HydraRetro
