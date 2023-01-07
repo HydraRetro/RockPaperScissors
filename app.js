@@ -91,10 +91,7 @@ function getWinner(winningScore) {
         playerScoreDisplay.style.color = 'green';
         computerScoreDisplay.style.color = 'red';
         winnerDisplay.appendChild(content);
-        //Disables Buttons
-        document.getElementById('rock').disabled = true;
-        document.getElementById('paper').disabled = true;
-        document.getElementById('scissors').disabled = true;
+        disableChoices();
 
     } else if (computerScore === winningScore) {
         const winnerDisplay = document.getElementById('winner');
@@ -104,11 +101,15 @@ function getWinner(winningScore) {
         playerScoreDisplay.style.color = 'red';
         computerScoreDisplay.style.color = 'green';
         winnerDisplay.appendChild(content);
-        //Disables Buttons
-        document.getElementById('rock').disabled = true;
-        document.getElementById('paper').disabled = true;
-        document.getElementById('scissors').disabled = true;
+        disableChoices();
     }
+}
+
+//DISABLE BUTTONS
+function disableChoices() {
+    document.getElementById('rock').disabled = true;
+    document.getElementById('paper').disabled = true;
+    document.getElementById('scissors').disabled = true;
 }
 
 //UI
