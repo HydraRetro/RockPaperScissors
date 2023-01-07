@@ -16,7 +16,7 @@ let playerSelection;
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', () => {
 
-    playerSelection = button.id;//Gets player value from button id
+    playerSelection = button.textContent;//Gets player value from button id
     computerSelection = getComputerChoice();//Gets computer value from function
     playRound(playerSelection, computerSelection);//Runs the game function once
     playerChoice.textContent = playerSelection;//Displays player choice
@@ -26,11 +26,11 @@ buttons.forEach(button => button.addEventListener('click', () => {
     getWinner(winningScore);
 
     // CONSOLE.LOG THE RESULTS - TEMP
-    console.log("Player Picks: ", playerSelection);
-    console.log("Computer picks: ", computerSelection);
-    console.log("Players Score is ", playerScore);
-    console.log("Computer Score is ", computerScore);
-    console.log(resultDisplay.innerText);
+    // console.log("Player Picks: ", playerSelection);
+    // console.log("Computer picks: ", computerSelection);
+    // console.log("Players Score is ", playerScore);
+    // console.log("Computer Score is ", computerScore);
+    // console.log(resultDisplay.innerText);
 
 }))
 
@@ -38,11 +38,11 @@ buttons.forEach(button => button.addEventListener('click', () => {
 function getComputerChoice() {
     let rand = Math.floor(Math.random() * 3);
     if (rand === 0) {
-        return ("rock");
+        return ("ROCK");
     } else if (rand === 1) {
-        return ("paper");
+        return ("PAPER");
     } else {
-        return ("scissors");
+        return ("SCISSORS");
     }
 }
 
@@ -50,22 +50,22 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         result = ("It's a Draw.");
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         computerScore += 1;
         result = ("Paper covers Rock, You Lose!");
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
         playerScore += 1;
         result = ("Rock beats Scissors. You Win!");
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         playerScore += 1;
         result = ("Paper covers Rock. You Win!");
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
         computerScore += 1;
         result = ("Scissors cuts Paper. You Lose!");
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
         computerScore += 1;
         result = ("Rock beats Scissors. You Lose!");
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
         playerScore += 1;
         result = ("Scissors cuts Paper. You Win!");
     } else {
@@ -76,7 +76,9 @@ function playRound(playerSelection, computerSelection) {
 //UPDATE SCORES
 function updateScores(playerScore, computerScore) {
     playerScoreDisplay.innerHTML = playerScore;
+    playerScoreDisplay.style.color = '#ffffe0';
     computerScoreDisplay.innerHTML = computerScore;
+    computerScoreDisplay.style.color = '#ffffe0';
 }
 
 //CHECK FOR WINNER AND DISPLAY RESULTS
@@ -85,7 +87,9 @@ function getWinner(winningScore) {
         const winnerDisplay = document.getElementById('winner');
         const content = document.createElement('h3');
         content.textContent = "Game Over. You Win!";
-        content.style.color = "green"
+        content.style.color = "green";
+        playerScoreDisplay.style.color = 'green';
+        computerScoreDisplay.style.color = 'red';
         winnerDisplay.appendChild(content);
         //Disables Buttons
         document.getElementById('rock').disabled = true;
@@ -96,7 +100,9 @@ function getWinner(winningScore) {
         const winnerDisplay = document.getElementById('winner');
         const content = document.createElement('h3');
         content.textContent = "Game Over. You Lose!";
-        content.style.color = "red"
+        content.style.color = "red";
+        playerScoreDisplay.style.color = 'red';
+        computerScoreDisplay.style.color = 'green';
         winnerDisplay.appendChild(content);
         //Disables Buttons
         document.getElementById('rock').disabled = true;
@@ -111,10 +117,9 @@ const computerChoice = document.getElementById('computer-choice');
 const playerScoreDisplay = document.getElementById('player-score');
 const computerScoreDisplay = document.getElementById('computer-score');
 const resultDisplay = document.getElementById('result');
-
+const resetButton = document.querySelector('#resetButton');
 
 //RESET BUTTON
-const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener('click', reset)
 function reset() {
     location.reload();
